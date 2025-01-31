@@ -37,7 +37,7 @@ const UserPosts = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:4000/allposts');
+      const response = await fetch('https://blog-back-end-qn95.onrender.com/allposts');
       const result = await response.json();
       
       if (result.status === 'success') {
@@ -64,7 +64,7 @@ const UserPosts = () => {
   const handleDelete = async (postId) => {
     if (window.confirm('Are you sure you want to delete this post?')) {
       try {
-        const response = await fetch(`http://localhost:4000/post/${postId}`, {
+        const response = await fetch(`https://blog-back-end-qn95.onrender.com/post/${postId}`, {
           method: 'DELETE',
         });
         
@@ -103,7 +103,7 @@ const UserPosts = () => {
         updatedAt: new Date().toISOString()
       };
 
-      const response = await fetch(`http://localhost:4000/post/${editingPost._id}`, {
+      const response = await fetch(`https://blog-back-end-qn95.onrender.com/post/${editingPost._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

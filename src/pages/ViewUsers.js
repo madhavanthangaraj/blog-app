@@ -11,7 +11,7 @@ const ViewUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/all-users');
+        const response = await axios.get('https://blog-back-end-qn95.onrender.com/api/all-users');
         
         if (response.data && response.data.users) {
           setUsers(response.data.users);

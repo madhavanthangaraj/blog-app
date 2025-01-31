@@ -75,7 +75,7 @@ const CreatePosts = ({ profilename }) => {
 
     try {
       console.log("Sending POST request to server...");
-      const response = await fetch("http://localhost:4000/post", {
+      const response = await fetch("https://blog-back-end-qn95.onrender.com/post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

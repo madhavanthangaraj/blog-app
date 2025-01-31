@@ -27,7 +27,7 @@ const ContactPage = () => {
     setStatus({ type: "", message: "" });
 
     try {
-      const response = await axios.post("http://localhost:4000/contact", formData);
+      const response = await axios.post("https://blog-back-end-qn95.onrender.com/contact", formData);
       setStatus({ 
         type: "success", 
         message: "Thank you for your message! We'll get back to you soon." 
