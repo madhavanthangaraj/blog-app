@@ -1,0 +1,140 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo Section */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #ffffff;
+  font-family: "Playfair Display", serif; /* Stylish font for elegance */
+  animation: logo-glow 3s infinite alternate;
+}
+
+/* Logo Glow Animation */
+@keyframes logo-glow {
+  0% {
+    text-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 15px #1e90ff;
+  }
+  100% {
+    text-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 30px #1e90ff;
+  }
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  transition: color 0.3s ease;
+}
+
+/* Link Hover Animation */
+.nav-links a:hover {
+  color: #1e90ff;
+}
+
+/* Active Animation Underline */
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #1e90ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Toggle Button Styles for Mobile */
+.toggle-button {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.toggle-button span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Toggle Animation for Mobile */
+.nav-links.active {
+  transform: scale(1);
+  animation: fade-in 0.5s ease forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    padding: 1rem;
+    width: 100%;
+    transform: scale(0);
+    transform-origin: top right;
+    gap: 1rem;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+}
+
+/* Clicking Animation for Links */
+.nav-links a:active {
+  color: #ff4500;
+  animation: link-click 0.3s ease-in-out;
+}
+
+@keyframes link-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
